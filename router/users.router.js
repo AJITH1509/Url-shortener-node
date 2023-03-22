@@ -50,7 +50,7 @@ router.post("/signup", express.json(), async function (request, response) {
         password: hashedPassword,
       });
 
-      response.send(result);
+      response.status(200).send(result);
     }
   } catch (err) {
     console.log(err);
@@ -79,6 +79,7 @@ router.post("/login", async function (request, response) {
 });
 router.post("/login/forgetpassword", async function (request, response) {
   const { email } = request.body;
+  console.log(email);
   const userFromDb = await getUserByName(email);
   if (!userFromDb) {
     response.status(401).send({ message: "invalid credentials" });
