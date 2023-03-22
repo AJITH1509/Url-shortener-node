@@ -9,7 +9,7 @@ import {
 } from "../service/Urlshortener.service.js";
 
 router.get("/", function (req, res) {
-  res.send("vanakamda mapla");
+  res.send("Welcome to MiniLink.in");
 });
 
 router.get("/urls", auth, async function (req, res) {
